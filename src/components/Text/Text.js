@@ -25,16 +25,18 @@ class Text extends PureComponent {
       weight,
       value,
       className,
+      children,
     } = this.props;
+    const CLASS_ROOT = 'text';
 
-    const classes = classNames('text', className, {
+    const classes = classNames(CLASS_ROOT, className, {
       [`${CLASS_ROOT}--${size}`]: size,
       [`${CLASS_ROOT}--${weight}`]: weight,
       [`${CLASS_ROOT}--c-${color}`]: color,
     });
 
     return (
-      <Tag value={value} className={classes} />
+      <Tag value={value} className={classes} >{children}</Tag>
     );
   }
 }
