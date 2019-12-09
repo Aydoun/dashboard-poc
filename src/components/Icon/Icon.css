@@ -1,0 +1,31 @@
+.icon--black {
+  color: black;
+}
+
+.icon--pink {
+  color: pink;
+}
+
+.icon--red {
+  color: red;
+}
+
+.icon--blue {
+  color: blue;
+}
+
+.icon--small {
+  font-size: 1em;
+}
+
+.icon--medium {
+  font-size: 3em;
+}
+
+.icon--large {
+  font-size: 4em;
+}
+
+.icon--x-large {
+  font-size: 5em;
+}

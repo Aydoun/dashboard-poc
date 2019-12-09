@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { string } from 'prop-types';
 
 const Card = props => {
   return (
@@ -7,7 +8,8 @@ const Card = props => {
 }
 
 Card.propTypes = {
-
+  title: string,
+  subTitle: string,
 };
 
 export default memo(Card);

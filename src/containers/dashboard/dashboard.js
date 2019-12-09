@@ -1,9 +1,11 @@
 import React from 'react';
+import './dashboard.css';
 
 export default function dashboard() {
   return (
     <div>
-      <p>I'm Dashboard UI</p>
+      I'm Dashboard
+
     </div>
   )
 }
