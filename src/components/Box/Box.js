@@ -9,7 +9,7 @@ const Box = props => {
   return (
     <div className="box">
       <div className="box__info">
-        <Text tag="h4">{title}</Text>
+        <Text tag="h4" color="lightblack">{title}</Text>
         <div>{extra}</div>
       </div>
       <div className="box__content">

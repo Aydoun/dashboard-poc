@@ -1,11 +1,12 @@
 import React, { PureComponent } from "react";
 import classNames from "classnames";
-import { array } from "prop-types";
+import { array, number } from "prop-types";
 import "./Pagination.css";
 
 class Pagination extends PureComponent {
   static propTypes = {
     collection: array,
+    initialCheck: number,
   };
 
   static defaultProps = {
@@ -13,7 +14,7 @@ class Pagination extends PureComponent {
   };
 
   state = {
-    checked: null
+    checked: this.props.initialCheck,
   };
 
   onChecked = index => () => {
