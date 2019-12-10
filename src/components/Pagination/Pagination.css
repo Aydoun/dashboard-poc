@@ -1,0 +1,15 @@
+.pagination__index {
+  display: inline-block;
+  border: 1px solid #d4d4d4;
+  background: white;
+  padding: 5px 10px;
+  border-left: none;
+  color: #909090;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.pagination__index--checked {
+  background: purple;
+  color: white;
+}
