@@ -1,7 +1,10 @@
 .select-container {
   display: inline-block;
+  margin-left: 20px;
 }
+
 .select-container__select {
+  min-width: 70px;
   background-color: white;
   border-radius: 0;
   font-size: 0.8em;
@@ -19,4 +22,16 @@
     calc(100% - 10px) calc(1em + 4px);
   background-size: 5px 5px, 5px 5px, 1px 1.5em;
   background-repeat: no-repeat;
+}
+
+.select-container__select--small {
+  width: auto;
+}
+
+.select-container__select--medium {
+  width: 70px;
+}
+
+.select-container__select--large {
+  width: 120px;
 }
