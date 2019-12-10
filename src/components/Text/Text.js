@@ -1,44 +1,28 @@
-import React, { PureComponent } from 'react';
-import classNames from 'classnames';
-import { string, oneOf } from 'prop-types';
-import './Text.css';
+import React, { memo } from "react";
+import classNames from "classnames";
+import { string, oneOf } from "prop-types";
+import "./Text.css";
 
-class Text extends PureComponent {
-  static defaultProps = {
-    tag: 'span',
-  };
+const Text = props => {
+  const { tag: Tag, color, className, children } = props;
 
-  static propTypes = {
-    tag: string,
-    color: oneOf(['black', 'purple']),
-    size: oneOf(['small', 'regular', 'large', 'x-large', 'xx-large']),
-    weight: oneOf(['thin', 'bold', 'black']),
-    value: string,
-    className: string,
-  };
+  const CLASS_ROOT = 'text';
+  const classes = classNames(CLASS_ROOT, className, {
+    [`${CLASS_ROOT}--${color}`]: color
+  });
 
-  render() {
-    const {
-      tag: Tag,
-      color,
-      size,
-      weight,
-      value,
-      className,
-      children,
-    } = this.props;
-    const CLASS_ROOT = 'text';
+  return <Tag className={classes}>{children}</Tag>;
+};
 
-    const classes = classNames(CLASS_ROOT, className, {
-      [`${CLASS_ROOT}--${size}`]: size,
-      [`${CLASS_ROOT}--${weight}`]: weight,
-      [`${CLASS_ROOT}--c-${color}`]: color,
-    });
+Text.propTypes = {
+  tag: string,
+  color: oneOf(["black", "lightblack"]),
+  className: string
+};
 
-    return (
-      <Tag value={value} className={classes} >{children}</Tag>
-    );
-  }
-}
+Text.defaultProps = {
+  tag: 'span',
+  color: 'black',
+};
 
-export default Text;
+export default memo(Text);
