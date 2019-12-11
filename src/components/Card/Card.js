@@ -11,8 +11,8 @@ const Card = props => {
     <div className="card">
       <Icon type={icon} size="medium" color="pink" />
       <div className="card__text">
-        <Text tag="h2">{title}</Text>
-        <Text tag="h3" color="lightblack">{subTitle}</Text>
+        <Text tag="p" size="large">{title}</Text>
+        <Text tag="p" color="lightblack" size="big" >{subTitle}</Text>
       </div>
     </div>
   )

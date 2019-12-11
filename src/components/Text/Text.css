@@ -5,3 +5,27 @@
 .text--lightblack {
   color: #5d5d5d;
 }
+
+.text--gray {
+  color: #a7a7a7;
+}
+
+.text--small {
+  font-size: 0.76em;
+}
+
+.text--medium {
+  font-size: 1em;
+}
+
+.text--big {
+  font-size: 1.5em;
+}
+
+.text--large {
+  font-size: 2em;
+}
+
+.text--x-large {
+  font-size: 3em;
+}

@@ -13,7 +13,7 @@ const Select = props => {
 
   return (
     <div className="select-container">
-      <Text >{label}</Text>
+      <Text size="small" color="lightblack">{label}</Text>
       <select className={classes} >
       { values.map((item, index) => <option key={index} value={index}>{item}</option>) }
       </select>
