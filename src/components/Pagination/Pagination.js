@@ -34,6 +34,7 @@ class Pagination extends PureComponent {
               'pagination__index--checked': index === checked
             })}
             onClick={this.onChecked(index)}
+            key={index}
           >
             {item}
           </span>

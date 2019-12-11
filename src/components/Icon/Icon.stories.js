@@ -15,16 +15,19 @@ export const collection = () => (
 export const colorIcons = () => (
   <div>
     <div>
-      <Icon type="venus-mars" color="pink" size="medium" />
+      <Icon type="smile-wink" color="pink" size="medium" />
     </div>
     <div>
-      <Icon type="users" color="red" size="large" />
+      <Icon type="smile" color="red" size="large" />
     </div>
     <div>
-      <Icon type="arrow-up" color="blue" size="medium" />
+      <Icon type="frown" color="blue" size="medium" />
     </div>
     <div>
-      <Icon type="arrow-down" size="large" />
+      <Icon type="meh" size="large" />
+    </div>
+    <div>
+      <Icon type="angry" size="large" />
     </div>
   </div>
 );

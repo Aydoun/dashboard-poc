@@ -3,10 +3,12 @@ import Box from "./";
 import Text from "../Text";
 import Select from "../Select";
 import Pagination from "../Pagination";
-import Highcharts from 'highcharts'
-// import ReactHighcharts from 'highcharts-react';
-// import ReactHighcharts from 'highcharts-react-official';
-import ReactHighcharts from "react-highcharts";
+
+import HighchartsMore from "highcharts/highcharts-more";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
+
+HighchartsMore(Highcharts);
 
 export default { title: "Box" };
 
@@ -115,152 +117,85 @@ const lineConfig = {
 const bubbleConfig = {
   chart: {
     type: "bubble",
-    plotBorderWidth: 1,
-    zoomType: "xy"
+    plotBorderWidth: 0
   },
-
   legend: {
     enabled: false
   },
-
   title: {
-    text: "Sugar and fat intake per country"
+    text: ""
   },
-
-  subtitle: {
-    text:
-      'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
-  },
-
-  accessibility: {
-    point: {
-      descriptionFormatter: function(point) {
-        var index = point.index + 1,
-          country = point.name,
-          fatIntake = point.x,
-          sugarIntake = point.y,
-          obesity = point.z;
-
-        return (
-          index +
-          ", " +
-          country +
-          ", fat: " +
-          fatIntake +
-          "g, sugar: " +
-          sugarIntake +
-          "g, obesity: " +
-          obesity +
-          "%."
-        );
-      }
-    }
-  },
-
-  xAxis: {
-    gridLineWidth: 1,
-    title: {
-      text: "Daily fat intake"
-    },
-    labels: {
-      format: "{value} gr"
-    },
-    plotLines: [
-      {
-        color: "black",
-        dashStyle: "dot",
-        width: 2,
-        value: 65,
-        label: {
-          rotation: 0,
-          y: 15,
-          style: {
-            fontStyle: "italic"
-          },
-          text: "Safe fat intake 65g/day"
-        },
-        zIndex: 3
-      }
-    ],
-    accessibility: {
-      rangeDescription: "Range: 60 to 100 grams."
-    }
-  },
-
-  yAxis: {
-    startOnTick: false,
-    endOnTick: false,
-    title: {
-      text: "Daily sugar intake"
-    },
-    labels: {
-      format: "{value} gr"
-    },
-    maxPadding: 0.2,
-    plotLines: [
-      {
-        color: "black",
-        dashStyle: "dot",
-        width: 2,
-        value: 50,
-        label: {
-          align: "right",
-          style: {
-            fontStyle: "italic"
-          },
-          text: "Safe sugar intake 50g/day",
-          x: -10
-        },
-        zIndex: 3
-      }
-    ],
-    accessibility: {
-      rangeDescription: "Range: 0 to 160 grams."
-    }
-  },
-
   tooltip: {
-    useHTML: true,
-    headerFormat: "<table>",
-    pointFormat:
-      '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
-      "<tr><th>Fat intake:</th><td>{point.x}g</td></tr>" +
-      "<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>" +
-      "<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>",
-    footerFormat: "</table>",
-    followPointer: true
+    enabled: false
   },
-
   plotOptions: {
-    series: {
-      dataLabels: {
-        enabled: true,
-        format: "{point.name}"
+    series: [
+      {
+        color: "#FF0000"
+      },
+      {
+        color: "#FFFF00"
       }
-    }
+    ]
   },
+  xAxis: {
+    categories: ["10", "15", "20", "25", "30", "35", "40", "50", "60"],
+    labels: {
+      format: "{value} min"
+    },
+    tickInterval: 5
+  },
+  yAxis: {
+    title: {
+      text: ""
+    },
+    // labels: {
+    //   formatter: function() {
+    //     const pos = this.value;
 
+    //     if (pos < 30) return "<30";
+    //     if (pos >= 30 && pos < 40) return "30-40";
+    //     if (pos >= 40 && pos < 50) return "40-50";
+    //     else return ">50";
+    //   }
+    // },
+    tickInterval: 10
+  },
   series: [
     {
-      data: [
-        { x: 95, y: 95, z: 13.8, name: "BE", country: "Belgium" },
-        { x: 86.5, y: 102.9, z: 14.7, name: "DE", country: "Germany" },
-        { x: 80.8, y: 91.5, z: 15.8, name: "FI", country: "Finland" },
-        { x: 80.4, y: 102.5, z: 12, name: "NL", country: "Netherlands" },
-        { x: 80.3, y: 86.1, z: 11.8, name: "SE", country: "Sweden" },
-        { x: 78.4, y: 70.1, z: 16.6, name: "ES", country: "Spain" },
-        { x: 74.2, y: 68.5, z: 14.5, name: "FR", country: "France" },
-        { x: 73.5, y: 83.1, z: 10, name: "NO", country: "Norway" },
-        { x: 71, y: 93.2, z: 24.7, name: "UK", country: "United Kingdom" },
-        { x: 69.2, y: 57.6, z: 10.4, name: "IT", country: "Italy" },
-        { x: 68.6, y: 20, z: 16, name: "RU", country: "Russia" },
-        { x: 65.5, y: 126.4, z: 35.3, name: "US", country: "United States" },
-        { x: 65.4, y: 50.8, z: 28.5, name: "HU", country: "Hungary" },
-        { x: 63.4, y: 51.8, z: 15.4, name: "PT", country: "Portugal" },
-        { x: 64, y: 82.9, z: 31.3, name: "NZ", country: "New Zealand" }
-      ]
+      borderWidth: 0,
+      data: [{ x: 10.5, y: 20, z: 13.8 }, { x: 15.5, y: 32, z: 13.8 }]
+    },
+    {
+      borderWidth: 0,
+      data: [{ x: 10, y: 20, z: 13.8 }, { x: 15, y: 32, z: 13.8 }]
     }
   ]
+};
+
+const radarConfig = {
+  chart: {
+    polar: true,
+    // type: 'area',
+  },
+  title: {
+    text: "",
+  },
+  tooltip: {
+    enabled: false,
+  },
+  yAxis: {
+    visible: false,
+  },
+  xAxis: {
+    visible: false,
+  },
+  series: [
+    {
+      type: 'area',
+      data: [33, 22, 20, 25],
+    },
+  ],
 };
 
 const extraContent = (
@@ -279,12 +214,6 @@ export const empty = () => <Box />;
 export const withTitle = () => (
   <Box title="title" extra={<p>This is extra content</p>}>
     <p>I'm Content</p>
-  </Box>
-);
-
-export const withPieChart = () => (
-  <Box title="Age" extra={<p>This is extra content</p>}>
-    <ReactHighcharts config={pieConfig} highcharts={Highcharts} />
   </Box>
 );
 
@@ -319,12 +248,24 @@ export const withPagination = () => (
 
 export const withLine = () => (
   <Box title="Attendance" extra={extraContent}>
-    <ReactHighcharts config={lineConfig} highcharts={Highcharts} />
+    <HighchartsReact options={lineConfig} />
+  </Box>
+);
+
+export const withPieChart = () => (
+  <Box title="Age" extra={<p>This is extra content</p>}>
+    <HighchartsReact options={pieConfig} />
+  </Box>
+);
+
+export const withRadarChart = () => (
+  <Box title="Age" extra={<p>This is extra content</p>}>
+    <HighchartsReact options={radarConfig} />
   </Box>
 );
 
 export const withBubbles = () => (
   <Box title="Attendance" extra={extraContent}>
-    <ReactHighcharts config={bubbleConfig} highcharts={Highcharts} />
+    <HighchartsReact options={bubbleConfig} />
   </Box>
 );

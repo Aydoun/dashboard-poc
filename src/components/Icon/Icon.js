@@ -12,7 +12,7 @@ const Icon = props => {
   });
 
   return (
-    <i className={`fa fa-${type} ${classes}`} />
+    <i className={`fas fa-${type} ${classes}`} />
   );
 }
 
