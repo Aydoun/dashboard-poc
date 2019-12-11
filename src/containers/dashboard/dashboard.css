@@ -1,0 +1,35 @@
+.dashboard {
+  
+}
+
+.dashboard__banner {
+  background: #dedede;
+  height: 50px;
+}
+
+.dashboard__container {
+  margin: 40px 25px;
+}
+
+.dashboard__grid {
+  display: flex;
+  margin: 20px 0;
+}
+
+.dashboard__chart-container {
+  margin: 0 10px;
+}
+
+.dashboard__dwelltime {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
+  word-spacing: 100px;
+  font-size: 1.5em;
+}

@@ -1,3 +1,7 @@
+.text {
+  line-height: 1.4em;
+}
+
 .text--black {
   color: #3c3c3c;
 }
@@ -8,6 +12,18 @@
 
 .text--gray {
   color: #a7a7a7;
+}
+
+.text--purple {
+  color: #a229ec;
+}
+
+.text--blue {
+  color: #6c32c7;
+}
+
+.text--bold {
+  font-weight: 500;
 }
 
 .text--small {

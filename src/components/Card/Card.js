@@ -12,10 +12,10 @@ const Card = props => {
       <Icon type={icon} size="medium" color="pink" category={category} />
       <div className="card__text">
         <Text tag="p" size="large">{title}</Text>
-        <Text tag="p" color="lightblack" size="big" >{subTitle}</Text>
+        <Text tag="p" color="lightblack" bold >{subTitle}</Text>
       </div>
     </div>
-  )
+  );
 }
 
 Card.propTypes = {
